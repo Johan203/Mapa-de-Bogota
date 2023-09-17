@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <script src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mapainteractivo.net%2Ffotos%2Fmapa-de-bogota.html&psig=AOvVaw0rd70SPD8AvRiuDwVUShQd&ust=1695043743116000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLipvpTgsYEDFQAAAAAdAAAAABAJ"></script>
+    <script src="http://purl.org/dc/dcmitype/StillImage"></script>
     <script>
         // Inicializamos la escena, la cámara y el renderizador
         const scene = new THREE.Scene();
@@ -26,14 +26,16 @@
 
         // Creamos un plano
         const planeGeometry = new THREE.PlaneGeometry(5, 5); // Ancho y alto del plano
-        const planeTexture = new THREE.TextureLoader().load('tu_archivo.svg'); // Ruta a tu archivo SVG
+        const planeTexture = new THREE.TextureLoader().load(''); // Ruta a tu archivo SVG
         const planeMaterial = new THREE.MeshBasicMaterial({ map: planeTexture, transparent: true });
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
         scene.add(plane);
 
 
         // Colocamos la cámara
-        camera.position.z = 5;
+        camera.position.z = 2;
+        plane.position.set(0, 0, 0); // Ajusta la posición en el espacio
+        plane.rotation.x = -Math.PI / 2; // Rota el plano 90 grados en el eje X para que quede horizontal
 
         // Añadimos una luz
         const light = new THREE.PointLight(0xffffff, 1, 100);
