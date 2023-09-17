@@ -27,7 +27,7 @@
 
         // Crea un plano
         const planeGeometry = new THREE.PlaneGeometry(5, 5); // Ancho y alto del plano
-        const planeTexture = new THREE.TextureLoader().load('Administrative_map_of_Distrito_Capital_(Colombia).svg'); // Ruta a tu archivo SVG
+        const planeTexture = new THREE.TextureLoader().load('Mapa-de-bogota-gratis.png'); // Ruta a tu archivo SVG
         const planeMaterial = new THREE.MeshBasicMaterial({ map: planeTexture });
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
         scene.add(plane);
