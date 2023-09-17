@@ -24,11 +24,13 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Creamos un cubo
-        const geometry = new THREE.BoxGeometry(1, 1, 0);
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
+        // Creamos un plano
+        const planeGeometry = new THREE.PlaneGeometry(5, 5); // Ancho y alto del plano
+        const planeTexture = new THREE.TextureLoader().load('tu_archivo.svg'); // Ruta a tu archivo SVG
+        const planeMaterial = new THREE.MeshBasicMaterial({ map: planeTexture, transparent: true });
+        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        scene.add(plane);
+
 
         // Colocamos la cámara
         camera.position.z = 5;
@@ -43,8 +45,8 @@
             requestAnimationFrame(render);
 
             // Hacemos que el cubo gire
-            //cube.rotation.x += 0.01;
-            //cube.rotation.y += 0.01;
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
 
             renderer.render(scene, camera);
         };
