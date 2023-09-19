@@ -32,12 +32,6 @@
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
         scene.add(plane);
         
-			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-	    		const Texture = new THREE.TextureLoader().load('Mapa-de-bogota-gratis.png'); // Ruta a tu archivo SVG
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			const cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
         // Colocamos la cámara
         camera.position.z = 5;
 
