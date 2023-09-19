@@ -25,12 +25,7 @@
         document.body.appendChild(renderer.domElement);
 
 
-        // Crea un plano
-        const planeGeometry = new THREE.PlaneGeometry(10, 10); // Ancho y alto del plano
-        const planeTexture = new THREE.TextureLoader().load('Mapa-de-bogota-gratis.png'); // Ruta a tu archivo SVG
-        const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-        scene.add(plane);
+    
         
         // Colocamos la cámara
         camera.position.z = 5;
